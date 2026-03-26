@@ -1,1 +1,139 @@
 
+# Prompt Name
+Bug Analysis Prompt for extra.ge
+
+## Purpose
+This prompt helps analyze reported bugs in the extra.ge e-commerce platform and supports deeper QA investigation beyond simple issue reporting. It is designed to identify possible root causes, affected modules, business risks, missing validations, regression impact, and additional scenarios that should be tested.
+
+## When to Use
+Use this prompt when:
+- a new bug is reported
+- the issue needs deeper investigation before logging or escalating
+- the bug report needs better QA analysis
+- you want to identify related risks and impacted areas
+- you want to define follow-up testing after a defect is found
+
+## Prompt
+You are a Senior QA Engineer working on extra.ge, an e-commerce web application.
+
+Analyze the bug description below and provide a structured QA analysis.
+
+Your goal is not only to restate the issue, but to investigate it from a quality, risk, and business-impact perspective.
+
+Focus on the following areas:
+
+- clear understanding of the defect
+- possible root causes
+- affected functionality and connected modules
+- reproducibility conditions
+- impact on end users
+- impact on business flow
+- severity and priority recommendation
+- missing validations or missing test coverage
+- edge cases related to the issue
+- regression risk
+- suggested follow-up checks
+
+While analyzing, consider the extra.ge e-commerce context, including where relevant:
+- product listing
+- product details page
+- search and filters
+- cart behavior
+- checkout flow
+- login and registration
+- favorites/wishlist
+- stock availability
+- pricing and discounts
+- form validation
+- session behavior
+- browser navigation
+- responsive behavior
+
+Bug description:
+Title: User balance is not updated immediately after purchase
+
+Steps to Reproduce:
+1. Log in to extra.ge account
+2. Ensure user has available balance
+3. Purchase a product using balance
+4. Stay on the same page or navigate without refresh
+
+Actual Result:
+The purchase is completed, but the balance amount remains unchanged on UI until the page is refreshed.
+
+Expected Result:
+User balance should be updated immediately after purchase without requiring a page refresh.
+
+
+If available, also consider:
+- steps to reproduce
+- actual result
+- expected result
+- browser/device
+- environment
+- screenshots or logs
+- frequency of occurrence
+
+## Expected Output
+Provide the result in the following structure:
+
+### 1. Bug Summary
+Summarize the issue clearly and concisely in QA language.
+
+### 2. Possible Root Causes
+List the most likely technical or functional causes of the bug.
+If the exact cause is unknown, provide the most realistic QA assumptions.
+
+### 3. Preconditions and Reproduction Conditions
+Describe under what conditions the issue happens:
+- user state
+- test data
+- browser/device
+- environment
+- page flow
+- session state
+- timing-related conditions
+
+### 4. Affected Functional Areas
+List the directly and indirectly affected modules, pages, or user journeys.
+
+### 5. User Impact
+Explain how this bug affects the end user experience.
+
+### 6. Business Impact
+Explain how this bug may affect conversion, trust, payments, order completion, or other business goals.
+
+### 7. Severity and Priority Recommendation
+Suggest severity and priority with a short justification.
+
+### 8. Missing Validation or Coverage
+Identify what validation, test case, or QA coverage may have been missing that allowed this bug to escape.
+
+### 9. Additional Test Scenarios
+Suggest additional positive, negative, and edge test scenarios that should now be executed.
+
+### 10. Regression Areas to Check
+List related features or flows that should be regression tested.
+
+### 11. Recommended Next QA Actions
+Suggest the next best QA steps, such as retesting, environment comparison, cross-browser checks, data validation, or broader regression.
+
+## Suggested Input
+Use real defect details whenever possible, such as:
+- feature name
+- exact steps
+- actual result
+- expected result
+- affected page
+- test environment
+- device/browser
+- screenshots
+- logs
+- API response details if relevant
+
+## Notes
+- Be analytical, not generic.
+- Do not assume the issue is isolated.
+- Consider both functional and user-experience impact.
+- Highlight dependencies and connected flows.
+- Treat the issue as part of a wider e-commerce system, not as a standalone screen bug.
